@@ -144,7 +144,7 @@ or vars but at least it does show that it is just a normal bash script.
 source ../install/inc-puppet.sh
 
 if [ "`which puppet`" = "" ]
-  then
+then
   install_puppet
 fi
 
@@ -165,3 +165,52 @@ echo You can also run the tests with:
 echo "  puppet apply --modulepath=modules test.pp"
 echo
 ```
+
+## Useful methods and envars
+
+### In bashconf.sh
+
+#### Variables
+
+These are not really meant to be overridden in your code, apart from in a 
+recognised extension point like the pre script, where the overrides are 
+documented.
+
+Overriding other variables may have unpredictable effects. Don't do it. 
+It's hacky. Treat them as read only please. If you do change one, e.g.
+`${RES_COL}` please change it back ASAP.
+
+* Colours and other ANSI escapes (e.g. `echo -e "${YELLOW}Hello${RESET}"`)
+  * `$YELLOW`
+  * `$PURPLE`
+  * `$WHITE`
+  * `$GREEN`
+  * `$BLUE`
+  * `$CYAN`
+  * `$RED`
+  * `$MOVE_TO_COL` - moves to column $RES_COL, set RES_COL first if you want to change it, default is 35, please set it back when done!
+  * `$RES_COL` - current column number that $MOVE_TO_COL moves to (not an ANSI escape)
+  * `$RESET` - reset all ANSI colours back to default
+* 'Chrome' overridable in pre script
+  * `$BANNER` - shown at the top of the parameter list
+  * `$INSTALL_LETTER` - Letter to press to start install phase, default `I`
+  * `$QUIT_LETTER` - Letter to press to quit, default `Q`
+  * `$PROMPT` - Prompt shown at bottom of parameter list
+* Miscellaneous
+  * `$ANS_FILE` - where the answer file is stored
+
+#### Methods
+
+Actually most of the methods in here are for internal use and probably not 
+that useful outside. 
+
+* paramloop - runs the REPL
+* banner - display whatever we set `$BANNER` to
+* read_entry - read an entry and either take some action or else edit the parameter represented by the entry
+* write_answers - save whatever answers have been input into a data file
+* read_answers - read a previously saved data file
+* edit_param - accept a value for a parameter, checking `allowed_choice` as required
+* check_required - see if all required parameters have values, return 0 if yes, or else return the number of parameters which don't have values
+
+### In funcs.sh
+
