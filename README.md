@@ -204,13 +204,13 @@ It's hacky. Treat them as read only please. If you do change one, e.g.
 Actually most of the methods in here are for internal use and probably not 
 that useful outside. 
 
-* paramloop - runs the REPL
-* banner - display whatever we set `$BANNER` to
-* read_entry - read an entry and either take some action or else edit the parameter represented by the entry
-* write_answers - save whatever answers have been input into a data file
-* read_answers - read a previously saved data file
-* edit_param - accept a value for a parameter, checking `allowed_choice` as required
-* check_required - see if all required parameters have values, return 0 if yes, or else return the number of parameters which don't have values
+* `paramloop` - runs the REPL
+* `banner` - display whatever we set `$BANNER` to
+* `read_entry` - read an entry and either take some action or else edit the parameter represented by the entry
+* `write_answers` - save whatever answers have been input into a data file
+* `read_answers` - read a previously saved data file
+* `edit_param` - accept a value for a parameter, checking `allowed_choice` as required
+* `check_required` - see if all required parameters have values, return 0 if yes, or else return the number of parameters which don't have values
 
 ### In funcs.sh
 
