@@ -23,7 +23,7 @@ None of the configuration files are required to be executable
 since they are included using the "source" command from within
 bashconf.sh
 
-### Parameters file
+### Parameters file `${CONF}_params.sh` - required
 
 This file is named `${CONF}_params.sh`.
 
@@ -95,4 +95,36 @@ required[$IDX]=1
 onlyif[$IDX]="backuptype=local"
 
 ```
+
+
+### Output file - `${CONF}_output.sh` - required
+
+This file should produce your output file from the supplied parameter values.
+
+You have access to all the methods in the bashconf script since it uses "source"
+to include your output file.
+
+
+### Pre file - `${CONF}_pre.sh` - optional
+
+If it exists this will be run before the configurator menu is shown.
+
+It allows you to override some envars in order to change the behaviour of the configurator.
+You have access to the colours `${GREEN}`, `${BLUE}`, etc. as well as the other vars and 
+methods from bashconf.sh.
+
+* $BANNER - override this to change the header from the default. 
+* $PROMPT - the prompt which is displayed at the bottom of the parameters list
+* $INSTALL_LETTER - if you have no install phase, hence no `${CONF}_install.sh` file, you can set this empty. Otherwise if your install option does not begin with 'I' you might want to change this. Default is 'I'.
+* $QUIT_LETTER - the letter to quit with, you might change this for i18n reasons
+
+
+### Install file - `${CONF}_install.sh` - optional
+
+If you want to run an install phase you may optionally create this script which 
+will be run when the user presses the $INSTALL_LETTER.
+
+Like all the other scripts it is included via "source" and so may reference 
+any other part of the global scope.
+
 
