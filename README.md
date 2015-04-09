@@ -118,6 +118,11 @@ methods from bashconf.sh.
 * $INSTALL_LETTER - if you have no install phase, hence no `${CONF}_install.sh` file, you can set this empty. Otherwise if your install option does not begin with 'I' you might want to change this. Default is `I`.
 * $QUIT_LETTER - the letter to quit with, you might change this for i18n reasons. Default is `Q`
 
+#### Example pre file
+```
+INSTALL_LETTER=A
+PROMPT="Please choose an index number to edit, A to apply configuration, or Q to quit"
+```
 
 ### Install file - `${CONF}_install.sh` - optional
 
