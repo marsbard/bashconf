@@ -31,35 +31,35 @@ You will set up a number of arrays in this file, each array index,
 e.g. 0, 1, 2, etc. will refer to an individual parameter. The following
 parameters can or must be used:
 
-#### params[$IDX] - required
+#### `params[$IDX]` - required
 
 Contains the name of the parameter.
 ```
 params[$IDX]="backuptype"
 ```
 
-#### descr[$IDX] - highly recommended
+#### `descr[$IDX]` - highly recommended
 
 Prosaic description of the parameter
 ```
 descr[$IDX]="Type of backup. Choose an option"
 ```
 
-#### default[$IDX] - optional
+#### `default[$IDX]` - optional
 
 Default value to use if nothing supplied
 ```
 default[$IDX]="local"
 ```
 
-#### required[$IDX] - optional
+#### `required[$IDX]` - optional
 
 Set to 1 if this field must be filled in, set to 0 or leave blank otherwise
 ```
 required[$IDX]=1
 ```
 
-#### choices[$IDX] - optional
+#### `choices[$IDX]` - optional
 
 If this is set to a pipe-separated list of choices, then only those choices
 will be allowed as possible values
@@ -67,7 +67,7 @@ will be allowed as possible values
 choices[$IDX]="s3|ftp|scp|local"
 ```
 
-#### onlyif[$IDX] - optional
+#### `onlyif[$IDX]` - optional
 
 If this is set, it must have a value like "&lt;param&gt;=&lt;value&gt;". When
 the condition specified in that value is satisfied, then this field will be 
@@ -219,10 +219,10 @@ These might be useful inside an output or install script
 
 * `allowed_choice $IDX $ANSWER` - echo `true` if the supplied answer is among the allowed choices, `false` otherwise
   * e.g. `allowed_choice 3 blue` would echo `false` if `$choices[3]="red|green|yellow"`
-* `count_effective_params` - echoes the number of parameters that are not hidden due to 'onlyif' clauses
-* `get_effective_idx $IDX` - given an apparent index number, with some options hidden due to 'onlyif' clauses, return the real index number, as if 'onlyif' was not being considered.
+* `count_effective_params` - echoes the number of parameters that are not hidden due to `onlyif` clauses
+* `get_effective_idx $IDX` - given an apparent index number, with some options hidden due to `onlyif` clauses, return the real index number, as if `onlyif` was not being considered.
 * `get_effective_answer $IDX` - given an apparent index number, get its answer. calls `get_effective_idx`
-* `get_answer $IDX` - get answer for real index number (not affected by 'onlyif')
+* `get_answer $IDX` - get answer for real index number (not affected by `onlyif`)
 * `get_param $NAME` - get the value (answer) of this named parameter
   * e.g. `get_param backuptype` might return `scp`
 * `get_onlyif $IDX` - echo `true` if the `onlyif` clause for this $IDX is satisfied, otherwise echo `false`
