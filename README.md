@@ -214,3 +214,12 @@ that useful outside.
 
 ### In funcs.sh
 
+#### Methods
+* `allowed_choice $IDX $ANSWER` - echo true if the supplied answer is among the allowed choices, false otherwise
+* `count_effective_params` - echoes the number of parameters that are not hidden due to 'onlyif' clauses
+* `get_effective_idx $IDX` - given an apparent index number, with some options hidden due to 'onlyif' clauses, return the real index number, as if 'onlyif' was not being considered.
+* `get_effective_answer $IDX` - given an apparent index number, get its answer. calls `get_effective_idx`
+* `get_answer $IDX` - get answer for real index number (not affected by 'onlyif')
+* `get_param $NAME` - get the value (answer) of this named parameter
+* `get_onlyif $IDX` - echo 'true' if the 'onlyif' clause for this $IDX is satisfied, otherwise echo false
+
