@@ -115,8 +115,8 @@ methods from bashconf.sh.
 
 * $BANNER - override this to change the header from the default. 
 * $PROMPT - the prompt which is displayed at the bottom of the parameters list
-* $INSTALL_LETTER - if you have no install phase, hence no `${CONF}_install.sh` file, you can set this empty. Otherwise if your install option does not begin with 'I' you might want to change this. Default is 'I'.
-* $QUIT_LETTER - the letter to quit with, you might change this for i18n reasons
+* $INSTALL_LETTER - if you have no install phase, hence no `${CONF}_install.sh` file, you can set this empty. Otherwise if your install option does not begin with 'I' you might want to change this. Default is `I`.
+* $QUIT_LETTER - the letter to quit with, you might change this for i18n reasons. Default is `Q`
 
 
 ### Install file - `${CONF}_install.sh` - optional
