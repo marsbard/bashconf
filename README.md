@@ -6,6 +6,8 @@ A flexible configurator written in bash
 As a submodule: 
 ```
   git submodule add https://github.com/marsbard/bashconf.git
+  git submodule init
+  git submodule update
 ```
 
 ## Basic minimal configuration
