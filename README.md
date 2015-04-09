@@ -13,8 +13,8 @@ As a submodule:
 We will assume in the following examples that an envar `CONF` 
 has been set to be the prefix for this configuration. For example, 
 in https://github.com/marsbard/puppet-alfresco which uses this 
-configurator you can see that CONF=config/ootb refers to files
-in the config/ folder with prefix "ootb_"
+configurator you can see that `CONF=config/ootb` refers to files
+in the `config/` folder with prefix `ootb_`
 
 None of the configuration files are required to be executable
 since they are included using the "source" command from within
@@ -22,7 +22,7 @@ bashconf.sh
 
 ### Parameters file
 
-This file is named "${CONF}_params.sh".
+This file is named `${CONF}_params.sh`.
 
 You will set up a number of arrays in this file, each array index, 
 e.g. 0, 1, 2, etc. will refer to an individual parameter. The following
