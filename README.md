@@ -134,4 +134,4 @@ any other part of the global scope.
 
 If this file is not found, but an INSTALL_LETTER is defined, you will be 
 warned when starting the configurator and if you eventually attempt to install
-you will see an error and no install is attempted
+you will see an error and no install will be attempted
