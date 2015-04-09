@@ -135,3 +135,33 @@ any other part of the global scope.
 If this file is not found, but an INSTALL_LETTER is defined, you will be 
 warned when starting the configurator and if you eventually attempt to install
 you will see an error and no install will be attempted
+
+#### Sample install file
+Perhaps not the best example as it does not refer to any internal methods
+or vars but at least it does show that it is just a normal bash script.
+
+```
+source ../install/inc-puppet.sh
+
+if [ "`which puppet`" = "" ]
+  then
+  install_puppet
+fi
+
+./install/modules-for-vagrant.sh
+
+puppet apply --modulepath=modules go.pp
+
+if [ $? != 0 ]; then exit 99; fi
+
+echo
+echo Completed, please allow some time for alfresco to start
+echo You may tail the logs at ${tomcat_home}/logs/catalina.out
+echo
+echo Note that you can reapply the puppet configuration from this directory with:
+echo "  puppet apply --modulepath=modules go.pp"
+echo
+echo You can also run the tests with:
+echo "  puppet apply --modulepath=modules test.pp"
+echo
+```
