@@ -215,6 +215,8 @@ that useful outside.
 ### In funcs.sh
 
 #### Methods
+These might be useful inside an output or install script
+
 * `allowed_choice $IDX $ANSWER` - echo true if the supplied answer is among the allowed choices, false otherwise
 * `count_effective_params` - echoes the number of parameters that are not hidden due to 'onlyif' clauses
 * `get_effective_idx $IDX` - given an apparent index number, with some options hidden due to 'onlyif' clauses, return the real index number, as if 'onlyif' was not being considered.
