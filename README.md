@@ -206,7 +206,7 @@ that useful outside.
 
 * `paramloop` - runs the REPL
 * `banner` - display whatever we set `$BANNER` to
-* `read_entry` - read an entry and either take some action or else edit the parameter represented by the entry
+* `read_entry` - read an entry and either take some action (`INSTALL_LETTER`, `QUIT_LETTER`) or else edit the parameter represented by the entry
 * `write_answers` - save whatever answers have been input into a data file
 * `read_answers` - read a previously saved data file
 * `edit_param` - accept a value for a parameter, checking `allowed_choice` as required
