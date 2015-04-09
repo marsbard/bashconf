@@ -16,7 +16,8 @@ We will assume in the following examples that an envar `CONF`
 has been set to be the prefix for this configuration. For example, 
 in https://github.com/marsbard/puppet-alfresco which uses this 
 configurator you can see that `CONF=config/ootb` refers to files
-in the `config/` folder with prefix `ootb_`
+in the `config/` folder with prefix `ootb_` - see 
+https://github.com/marsbard/puppet-alfresco/tree/develop/config
 
 None of the configuration files are required to be executable
 since they are included using the "source" command from within
