@@ -218,10 +218,13 @@ that useful outside.
 These might be useful inside an output or install script
 
 * `allowed_choice $IDX $ANSWER` - echo true if the supplied answer is among the allowed choices, false otherwise
+  * e.g. `allowed_choice 3 blue` would return false if `$choices[3]="red|green|yellow"`
 * `count_effective_params` - echoes the number of parameters that are not hidden due to 'onlyif' clauses
 * `get_effective_idx $IDX` - given an apparent index number, with some options hidden due to 'onlyif' clauses, return the real index number, as if 'onlyif' was not being considered.
 * `get_effective_answer $IDX` - given an apparent index number, get its answer. calls `get_effective_idx`
 * `get_answer $IDX` - get answer for real index number (not affected by 'onlyif')
 * `get_param $NAME` - get the value (answer) of this named parameter
+  * e.g. `get_param backuptype` might return `scp`
 * `get_onlyif $IDX` - echo 'true' if the 'onlyif' clause for this $IDX is satisfied, otherwise echo false
+  * so if `$onlyif[5]="backuptype=scp" then if `get_param backuptype` is not "scp" this will echo false, or true if it is
 
