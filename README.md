@@ -132,4 +132,6 @@ will be run when the user presses the $INSTALL_LETTER.
 Like all the other scripts it is included via "source" and so may reference 
 any other part of the global scope.
 
-
+If this file is not found, but an INSTALL_LETTER is defined, you will be 
+warned when starting the configurator and if you eventually attempt to install
+you will see an error and no install is attempted
