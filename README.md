@@ -149,6 +149,9 @@ It allows you to override some envars in order to change the behaviour of the co
 You have access to the colours `${GREEN}`, `${BLUE}`, etc. as well as the other vars and 
 methods from bashconf.sh.
 
+If you want to add some preamble text to be displayed just once before the menu
+is shown, you can do so here. [Example](https://github.com/marsbard/bashconf/blob/master/examples/httpd-conf-frag_pre.sh)
+
 * `$BANNER` - override this to change the header from the default. 
 * `$PROMPT` - the prompt which is displayed at the bottom of the parameters list
 * `$INSTALL_LETTER` - if you have no install phase, hence no `${CONF}_install.sh` file, you can set this empty. Otherwise if your install option does not begin with 'I' you might want to change this. Default is `I`.
