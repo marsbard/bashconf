@@ -113,10 +113,11 @@ It allows you to override some envars in order to change the behaviour of the co
 You have access to the colours `${GREEN}`, `${BLUE}`, etc. as well as the other vars and 
 methods from bashconf.sh.
 
-* $BANNER - override this to change the header from the default. 
-* $PROMPT - the prompt which is displayed at the bottom of the parameters list
-* $INSTALL_LETTER - if you have no install phase, hence no `${CONF}_install.sh` file, you can set this empty. Otherwise if your install option does not begin with 'I' you might want to change this. Default is `I`.
-* $QUIT_LETTER - the letter to quit with, you might change this for i18n reasons. Default is `Q`
+* `$BANNER` - override this to change the header from the default. 
+* `$PROMPT` - the prompt which is displayed at the bottom of the parameters list
+* `$INSTALL_LETTER` - if you have no install phase, hence no `${CONF}_install.sh` file, you can set this empty. Otherwise if your install option does not begin with 'I' you might want to change this. Default is `I`.
+* `$QUIT_LETTER` - the letter to quit with, you might change this for i18n reasons. Default is `Q`
+* `$WRITE_ON_QUIT` - Whether we write the files when we quit. Default is 1, use 0 to not write.
 
 #### Example pre file
 ```
