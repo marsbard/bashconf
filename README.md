@@ -12,10 +12,17 @@ parameters](#onlyifidx---optional)
 * (soon) [Internationalisation support](https://github.com/marsbard/bashconf/issues/2)
 * (soon) [Wizard mode](https://github.com/marsbard/bashconf/issues/1)
 
+
+
 ## Example of output
 An example of what you will see when using this script, shows the httpd.conf
 fragment example being rendered and the user being asked to enter a value
 for the `monitor_ip` variable, having chosen index `2`
+
+To run this we invoke: 
+```
+$ CONF=examples/httpd-conf-frag ./bashconf.sh
+```
 
 ```
 =============================================
