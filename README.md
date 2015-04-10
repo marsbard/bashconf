@@ -9,8 +9,8 @@ an install phase
 * Allow showing/hiding of some parameters based on [the value of other
 parameters](#onlyifidx---optional)
 * Allow constraining of responses to [certain values](#choicesidx---optional)
-* (soon) [Internationalisation support](/marsbard/bashconf/issues/2)
-* (soon) [Wizard mode](/marsbard/bashconf/issues/1)
+* (soon) [Internationalisation support](https://github.com/marsbard/bashconf/issues/2)
+* (soon) [Wizard mode](https://github.com/marsbard/bashconf/issues/1)
 
 ## Usage
 
