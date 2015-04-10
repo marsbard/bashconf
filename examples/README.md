@@ -35,7 +35,8 @@ used in production, but is handy for a demo
 function render_template {
   eval "echo \"$(cat $1)\""
 }
-
+...
+render_template ${CONF}_template.txt > httpd-conf-frag.out.txt
 ```
 Beware that using `eval` on a file can be dangerous, you really have to 
 trust in your template file!
