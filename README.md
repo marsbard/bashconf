@@ -1,6 +1,17 @@
 # bashconf
 A flexible configurator written in bash
 
+## Features
+
+* Accept an arbitrary number of parameters and allow editing of their
+values, and finally write out a configuration file and optionally run
+an install phase
+* Allow showing/hiding of some parameters based on [the value of other
+parameters](#onlyifidx---optional)
+* Allow constraining of responses to [certain values](#choicesidx---optional)
+* (soon) [Internationalisation support](/marsbard/bashconf/issues/2)
+* (soon) [Wizard mode](/marsbard/bashconf/issues/1)
+
 ## Usage
 
 As a submodule: 
