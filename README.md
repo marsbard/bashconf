@@ -12,6 +12,29 @@ parameters](#onlyifidx---optional)
 * (soon) [Internationalisation support](https://github.com/marsbard/bashconf/issues/2)
 * (soon) [Wizard mode](https://github.com/marsbard/bashconf/issues/1)
 
+## Example of output
+An example of what you will see when using this script, shows the httpd.conf
+fragment example being rendered and the user being asked to enter a value
+for the `monitor_ip` variable, having chosen index `2`
+
+```
+=============================================
+Example to create a small httpd.conf fragment
+=============================================
+
+Idx Param                     Value
+
+[1] status_uri                /server-status
+[2] monitor_ip                10.1 192.168.0
+
+When finished editing, choose 'W' to write the file, or 'C' to cancel
+ -> 2
+Parameter: monitor_ip
+The IP or range of IPs which is/are allowed to view this status URI. E.g. "10.1 172.20 192.168.2", "10.1.0.0/16"
+[10.1 192.168.0]: 
+
+```
+
 ## Usage
 
 As a submodule: 
