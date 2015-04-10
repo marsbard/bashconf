@@ -31,6 +31,7 @@ ${YELLOW}======================================================${RESET}"
 INSTALL_LETTER="I"
 QUIT_LETTER="Q"
 PROMPT="${WHITE}Please choose an index number to edit, I to install, or Q to quit${RESET}"
+WRITE_ON_QUIT=1 # should we write the config file when quitting
 #######
 
 
@@ -55,7 +56,7 @@ fi
 # $INSTALL_LETTER, $PROMPT, $QUIT_LETTER, $BANNER
 if [ -f "${CONF}_pre.sh" ]
 then
-  echo loading ${CONF}_pre.sh
+  #echo loading ${CONF}_pre.sh
   source "${CONF}_pre.sh"
 fi
 
@@ -74,8 +75,15 @@ fi
 # We'll store the answers here
 ANS_FILE="${CONF}_answers.sh"
 
+# huh, a bit funky, should be a better way to work out our location?
+# TODO fix this to be better
+FUNCSPATH=bashconf
+if [ -f ./bashconf.sh ]
+then
+  FUNCSPATH=.
+fi
+source $FUNCSPATH/funcs.sh
 
-source bashconf/funcs.sh
 
 function paramloop() {
 	echo -en "Idx\tParam"
@@ -141,10 +149,12 @@ function read_entry {
 
     echo Installing...
 		write_answers
+    echo -e "${GREEN}Writing output file using ${CONF}_output.sh${RESET}"
     source "${CONF}_output.sh"
     if [ -f "${CONF}_install.sh" ]
     then
       source "${CONF}_install.sh" 
+      exit
     else
       echo -e "${RED}Error: ${CONF}_install.sh does not exist${YELLOW} but we are installing now${RESET}"
       exit 99
@@ -154,7 +164,11 @@ function read_entry {
 	elif [ "${ENTRY,,}" = "${QUIT_LETTER,,}" ]
 	then
 		write_answers
-    source "${CONF}_output.sh"
+    if [ $WRITE_ON_QUIT = 1 ]
+    then
+      echo -e "${GREEN}Writing output file using ${CONF}_output.sh${RESET}"
+      source "${CONF}_output.sh"
+    fi
 		exit
 	else
 		if [[ $ENTRY =~ $NUMERIC ]]
