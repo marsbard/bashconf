@@ -75,6 +75,8 @@ shown, otherwise it will be hidden and any 'required' setting is ignored
 ```
 onlyif[$IDX]="backuptype=local"
 ```
+To be clear, the left hand side of the condition cannot be any envar, it must
+be a parameter, in other words, its value will be checked using `get_param &lt;param-name&gt;`
 
 ### Example parameters file
 
