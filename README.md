@@ -272,6 +272,7 @@ These might be useful inside an output or install script
 * `get_answer $IDX` - get answer for real index number (not affected by `onlyif`)
 * `get_param $NAME` - get the value (answer) of this named parameter
   * e.g. `get_param backuptype` might return `scp`
+* `set_param $NAME $VAL` - set the value of named parameter to the supplied value
 * `get_onlyif $IDX` - echo `true` if the `onlyif` clause for this $IDX is satisfied, otherwise echo `false`
   * so if `$onlyif[5]="backuptype=scp"` then if `get_param backuptype` is not "scp" this will echo `false`, or `true` if it is
 
