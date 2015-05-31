@@ -97,6 +97,20 @@ function get_param {
 	done
 }
 
+# give a parameter name and a value, set that 
+# parameter to the value
+function set_param {
+	param=$1
+	for i in `seq 0 $(( ${#params[@]} -1 )) `
+	do
+		if [ "${params[i]}" = "$param" ]
+		then
+			answers[i]=$2
+			break
+		fi
+	done
+}
+
 # echo 'true' or 'false' depending on whether the onlyif clause is satisfied
 function get_onlyif {
 	IDX=$1
