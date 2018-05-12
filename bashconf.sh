@@ -58,6 +58,8 @@ if [ -f "${CONF}_pre.sh" ]
 then
   #echo loading ${CONF}_pre.sh
   source "${CONF}_pre.sh"
+  # reload params script in case the pre script altered it
+  source "${CONF}_params.sh"
 fi
 
 
